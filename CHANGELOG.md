@@ -1,3 +1,10 @@
+## [1.0.4](https://github.com/Mala1180/uv-python-project-template/compare/1.0.3...1.0.4) (2026-05-12)
+
+### Bug Fixes
+
+* fix project name for realeasing on testpypi ([3a23fab](https://github.com/Mala1180/uv-python-project-template/commit/3a23fab9c9b797a9c060dda4a878ccc9ac8595dd))
+* fix project name for realeasing on testpypi ([f7c9928](https://github.com/Mala1180/uv-python-project-template/commit/f7c9928a5a8ccffdacb210fda8d844a8dfb4e673))
+
 ## [1.0.3](https://github.com/Mala1180/uv-python-project-template/compare/1.0.2...1.0.3) (2026-05-12)
 
 ### Bug Fixes
