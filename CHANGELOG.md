@@ -1,3 +1,17 @@
+## [1.0.5](https://github.com/Mala1180/uv-python-project-template/compare/1.0.4...1.0.5) (2026-05-12)
+
+### Bug Fixes
+
+* fix project version when releasing, remove bak files after renaming ([062d563](https://github.com/Mala1180/uv-python-project-template/commit/062d5634f7bec02ac16a927b4589f542d98515b0))
+
+### General maintenance
+
+* update README ([2fe3e45](https://github.com/Mala1180/uv-python-project-template/commit/2fe3e45f4f35d4ee0cf102e605f909e4899c574a))
+
+### Refactoring
+
+* rework rename-template script ([ce15366](https://github.com/Mala1180/uv-python-project-template/commit/ce15366a18e10cd5facccfcb71e5c4f6b0a7abf8))
+
 ## [1.0.4](https://github.com/Mala1180/uv-python-project-template/compare/1.0.3...1.0.4) (2026-05-12)
 
 ### Bug Fixes
