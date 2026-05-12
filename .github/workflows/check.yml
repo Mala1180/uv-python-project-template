@@ -26,29 +26,29 @@ jobs:
       - name: Install Poetry
         run: |
           python -m pip install --upgrade pip
-          python -m pip install poetry
+          python -m pip install uv
 
       - name: Restore Development Environment
-        run: poetry install
+        run: uv sync
 
       - name: Check code is syntactically correct
         shell: bash
-        run: poetry run poe compile
+        run: uv run poe compile
 
       - name: Static Checks
         shell: bash
-        run: poetry run poe static-checks
+        run: uv run poe static-checks
 
       - name: Format Check
         shell: bash
-        run: poetry run poe format-check
+        run: uv run poe format-check
 
       - name: Test with Coverage
         shell: bash
         run: |
-          poetry run poe coverage
-          poetry run poe coverage-report
-          poetry run poe coverage-html
+          uv run poe coverage
+          uv run poe coverage-report
+          uv run poe coverage-html
 
       - uses: actions/upload-artifact@v7
         with:
@@ -87,14 +87,14 @@ jobs:
       - name: Install Poetry
         run: |
           python -m pip install --upgrade pip
-          python -m pip install -r requirements.txt
+          python -m pip install uv
 
       - name: Restore Development Environment
-        run: poetry install
+        run: uv sync
 
       - name: Test
         shell: bash
-        run: poetry run poe test
+        run: uv run poe test
 
   deploy:
     name: Deploy
