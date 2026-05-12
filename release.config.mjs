@@ -35,7 +35,8 @@ if (!dryRun) {
         ["@semantic-release/git", {
             "assets": [
                 "CHANGELOG.md",
-                "pyproject.toml"
+                "pyproject.toml",
+                "uv.lock"
             ],
             "message": "chore(release): ${nextRelease.version} [skip ci]\n\n${nextRelease.notes}"
         }]

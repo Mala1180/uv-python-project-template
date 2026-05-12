@@ -76,6 +76,33 @@ mark_update_error() {
     HAD_ERROR=1
 }
 
+cleanup_backup_files() {
+    local file
+
+    while IFS= read -r -d "" file; do
+        if ! rm -f -- "$file"; then
+            echo "Warning: could not remove backup file '$file'." 1>&2
+            HAD_ERROR=1
+        fi
+    done < <(
+        find . \
+            \( \
+                -path "./.git" -o \
+                -path "./.venv" -o \
+                -path "./.mypy_cache" -o \
+                -path "./.pytest_cache" -o \
+                -path "./.ruff_cache" -o \
+                -path "./__pycache__" -o \
+                -path "./build" -o \
+                -path "./dist" -o \
+                -path "./htmlcov" \
+            \) -prune \
+            -o -type f \
+            -name "*.bak" \
+            -print0
+    )
+}
+
 while IFS= read -r -d "" file; do
     if [[ "$file" == "./rename-template.sh" ]]; then
         continue
@@ -104,6 +131,7 @@ done < <(
 )
 
 rename_package_dir
+cleanup_backup_files
 
 echo "Renamed project to '$PROJECT_NAME' with Python module '$MODULE_NAME'."
 
