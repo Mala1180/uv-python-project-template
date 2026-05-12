@@ -16,25 +16,25 @@ The template starts with a minimal package named `my_project`, which will be ren
 
 ```bash
 <root directory>
-├── src/                    # source root for the Python package
-│   └── my_project/         # main package (renamed into your project name)
+├── src/                              # source root for the Python package
+│   └── uv_python_project_template/   # main package (renamed into your project name)
 │       ├── __init__.py
-│       └── __main__.py     # application entry point for `python -m my_project`
-├── tests/                  # test package
-│   └── test_my_class.py    # pytest example
-├── .github/                # configuration of GitHub Actions
+│       └── main.py                   # application entry point for `uv run <your_project_name>`
+├── tests/                            # test package
+│   └── test_my_class.py              # pytest example
+├── .github/                          # configuration of GitHub Actions
 │   └── workflows/
-│       ├── check.yml       # runs checks and tests on multiple OSs and Python versions
-│       ├── deploy.yml      # releases to PyPI/TestPyPI with semantic-release
-│       └── init.yml        # initializes repositories created from this template
-├── CHANGELOG.md            # generated release changelog
-├── LICENSE                 # license file
-├── package.json            # Node.js dependencies for semantic-release
-├── pyproject.toml          # Python project configuration, dependencies, and tasks
-├── renovate.json           # configuration of Renovate bot for dependency updates
-├── release.config.mjs      # semantic-release configuration
-├── rename-template.sh      # CI helper script used by init.yml to rename the project
-└── uv.lock                 # locked Python dependency versions
+│       ├── check.yml                 # runs checks and tests on multiple OSs and Python versions
+│       ├── deploy.yml                # releases to PyPI/TestPyPI with semantic-release
+│       └── init.yml                  # initializes repositories created from this template
+├── CHANGELOG.md                      # generated release changelog
+├── LICENSE                           # license file
+├── package.json                      # Node.js dependencies for semantic-release
+├── pyproject.toml                    # Python project configuration, dependencies, and tasks
+├── renovate.json                     # configuration of Renovate bot for dependency updates
+├── release.config.mjs                # semantic-release configuration
+├── rename-template.sh                # CI helper script used by init.yml to rename the project
+└── uv.lock                           # locked Python dependency versions
 ```
 
 ## Requirements
