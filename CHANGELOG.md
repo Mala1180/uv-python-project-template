@@ -1,3 +1,9 @@
+## [1.0.1](https://github.com/Mala1180/uv-python-project-template/compare/1.0.0...1.0.1) (2026-05-12)
+
+### Bug Fixes
+
+* fix release on test pypi ([b6a46a6](https://github.com/Mala1180/uv-python-project-template/commit/b6a46a67b8b6026aafc2c3927772c0d761a9c16a))
+
 ## 1.0.0 (2026-05-12)
 
 ### Features
