@@ -1,3 +1,9 @@
+## [1.0.3](https://github.com/Mala1180/uv-python-project-template/compare/1.0.2...1.0.3) (2026-05-12)
+
+### Bug Fixes
+
+* add README, remove requirements, update project version ([aec4a09](https://github.com/Mala1180/uv-python-project-template/commit/aec4a095931fcf8a286d76746f2f93f4f999a7bd))
+
 ## [1.0.2](https://github.com/Mala1180/uv-python-project-template/compare/1.0.1...1.0.2) (2026-05-12)
 
 ### Bug Fixes
