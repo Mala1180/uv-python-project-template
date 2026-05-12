@@ -1,5 +1,5 @@
 [project]
-name = "my_project"
+name = "uv-python-project-template"
 version = "1.0.3"
 description = "A Python project template using uv"
 readme = "README.md"
