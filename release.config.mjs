@@ -1,12 +1,15 @@
 let dryRun = (process.env.RELEASE_DRY_RUN || "false").toLowerCase() === "true";
 let testPypi = (process.env.RELEASE_TEST_PYPI || "false").toLowerCase() === "true";
 const pypiToken = process.env.PYPI_TOKEN;
+const testPypiToken = process.env.TEST_PYPI_TOKEN;
 
 let prepareCmd = "uv version \${nextRelease.version} && uv build";
-let publishCmd = `uv publish --token ${pypiToken}`;
+let publishCmd = `uv publish --token `;
 
 if (testPypi) {
-    publishCmd += ` --index testpypi`;
+    publishCmd += `${testPypiToken} --index testpypi`;
+} else {
+    publishCmd += `${pypiToken}`;
 }
 
 if (dryRun) {
