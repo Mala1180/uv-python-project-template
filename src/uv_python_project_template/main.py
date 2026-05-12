@@ -1,0 +1,3 @@
+import uv_python_project_template
+
+uv_python_project_template.main()
