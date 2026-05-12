@@ -26,9 +26,12 @@ jobs:
 
       - name: Rename project
         run: bash rename-template.sh $(basename ${{ github.repository }})
+        shell: bash
 
-      - name: Remove init.yml
-        run: rm .github/workflows/init.yml
+      - name: Remove template initialization files
+        run: |
+          rm .github/workflows/init.yml
+        shell: bash
 
       - name: Change default assignee in renovate.json
         run: |
