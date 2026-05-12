@@ -1,3 +1,9 @@
+## [1.0.2](https://github.com/Mala1180/uv-python-project-template/compare/1.0.1...1.0.2) (2026-05-12)
+
+### Bug Fixes
+
+* fix token env var and add renovate ([0930407](https://github.com/Mala1180/uv-python-project-template/commit/09304071b04da565c3fdc112a4a24b25115ed749))
+
 ## [1.0.1](https://github.com/Mala1180/uv-python-project-template/compare/1.0.0...1.0.1) (2026-05-12)
 
 ### Bug Fixes
