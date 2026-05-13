@@ -1,3 +1,9 @@
+## [1.1.3](https://github.com/Mala1180/uv-python-project-template/compare/1.1.2...1.1.3) (2026-05-13)
+
+### Bug Fixes
+
+* **ci:** fix sed option ([601a215](https://github.com/Mala1180/uv-python-project-template/commit/601a21581c721da4468e6f6ce3ebe536e156206f))
+
 ## [1.1.2](https://github.com/Mala1180/uv-python-project-template/compare/1.1.1...1.1.2) (2026-05-13)
 
 ### Bug Fixes
