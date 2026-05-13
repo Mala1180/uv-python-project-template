@@ -38,8 +38,14 @@ format-check = "ruff format --check"
 mypy = "mypy src test"
 compile = "python -m compileall src test"
 static-checks = [
+    "compile",
+    "format-check",
     "ruff-check",
     "mypy",
+]
+static-fixes = [
+    "ruff-fix",
+    "format",
 ]
 
 [[tool.uv.index]]
