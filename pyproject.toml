@@ -1,6 +1,6 @@
 [project]
 name = "uv-python-project-template"
-version = "1.0.7"
+version = "1.1.0"
 description = "A Python project template using uv"
 readme = "README.md"
 authors = [

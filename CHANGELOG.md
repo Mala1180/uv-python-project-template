@@ -1,3 +1,9 @@
+## [1.1.0](https://github.com/Mala1180/uv-python-project-template/compare/1.0.7...1.1.0) (2026-05-13)
+
+### Features
+
+* update commands for static checks and fixes, update matrix on CI using uv ([3d36460](https://github.com/Mala1180/uv-python-project-template/commit/3d3646082ba20876e5de452e75e7d94653857f7a))
+
 ## [1.0.7](https://github.com/Mala1180/uv-python-project-template/compare/1.0.6...1.0.7) (2026-05-13)
 
 ### Bug Fixes
