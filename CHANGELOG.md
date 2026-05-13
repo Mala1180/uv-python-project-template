@@ -1,3 +1,9 @@
+## [1.0.7](https://github.com/Mala1180/uv-python-project-template/compare/1.0.6...1.0.7) (2026-05-13)
+
+### Bug Fixes
+
+* fix rename in CI init workflow ([ca5ae97](https://github.com/Mala1180/uv-python-project-template/commit/ca5ae97145077ebc00b28c2ee69f9adc56d01b0e))
+
 ## [1.0.6](https://github.com/Mala1180/uv-python-project-template/compare/1.0.5...1.0.6) (2026-05-13)
 
 ### Bug Fixes
