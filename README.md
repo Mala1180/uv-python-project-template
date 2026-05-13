@@ -10,7 +10,7 @@ It already includes:
 - [Renovate](https://docs.renovatebot.com/) configuration for automated dependency updates;
 - [semantic-release](https://semantic-release.gitbook.io/semantic-release/) configuration with conventional commits for automated releases to PyPI.
 
-The template starts with a minimal package named `my_project`, which will be renamed when you create a new repository from this template.
+The template starts with a minimal package named `uv_python_project_template`, which will be renamed when you create a new repository from this template.
 
 ## Project Structure
 
@@ -19,7 +19,7 @@ The template starts with a minimal package named `my_project`, which will be ren
 ├── src/                              # source root for the Python package
 │   └── uv_python_project_template/   # main package (renamed into your project name)
 │       ├── __init__.py
-│       └── main.py                   # application entry point for `uv run <your_project_name>`
+│       └── main.py                   # application entry point
 ├── tests/                            # test package
 │   └── test_my_class.py              # pytest example
 ├── .github/                          # configuration of GitHub Actions
@@ -79,13 +79,13 @@ uv python list
     uv run poe test
     ```
 
-5. Start building your project in `src/<your_project_name>/` and add tests under
+5. Start building your project in `src/uv_python_project_template/` and add tests under
    `tests/`.
 
 ## Main Commands
 
 ### Running the Application
-`uv run <your_project_name>` to run the application entry point defined in `pyproject.toml`.
+`uv run uv_python_project_template` to run the application entry point defined in `pyproject.toml`.
 
 
 ### Dependency Management
@@ -93,7 +93,7 @@ uv python list
 | Command | Description |
 | --- | --- |
 | `uv sync` | Create or update the local environment from `pyproject.toml` and `uv.lock`. |
-| `uv run <your_project_name>` | Run the application entry point. |
+| `uv run uv_python_project_template` | Run the application entry point. |
 | `uv add <package>` | Add a runtime dependency. |
 | `uv add --dev <package>` | Add a development dependency. |
 | `uv remove <package>` | Remove a dependency. | 

@@ -1,7 +1,5 @@
 #!/usr/bin/env bash
 
-set -uo pipefail
-
 TEMPLATE_PROJECT_NAME="uv-python-project-template"
 TEMPLATE_MODULE_NAME="uv_python_project_template"
 TEMPLATE_PLACEHOLDER_NAME="my_project"
@@ -35,103 +33,11 @@ if [[ ! "$MODULE_NAME" =~ ^[a-z_][a-z0-9_]*$ ]]; then
     echo "Warning: derived Python module name '$MODULE_NAME' is unusual; continuing." 1>&2
 fi
 
-replace_in_file() {
-    local file=$1
-    local search=$2
-    local replacement=$3
+for FILE in `find . -type f  -not -iname '*.pyc' -not -path '*.git*'`; do 
+    sed -i -e "s/$TEMPLATE_MODULE_NAME/$MODULE_NAME/g" $FILE
+    sed -i -e "s/$TEMPLATE_PROJECT_NAME/$PROJECT_NAME/g" $FILE
 
-    SEARCH=$search REPLACEMENT=$replacement perl -0pi -e 's/\Q$ENV{SEARCH}\E/$ENV{REPLACEMENT}/g' "$file"
-}
-
-rename_package_dir() {
-    local source_dir="src/$TEMPLATE_MODULE_NAME"
-    local target_dir="src/$MODULE_NAME"
-
-    if [[ ! -d "$source_dir" ]]; then
-        echo "Warning: expected package directory '$source_dir' does not exist; skipping directory rename." 1>&2
-        HAD_ERROR=1
-        return
-    fi
-
-    if [[ "$source_dir" == "$target_dir" ]]; then
-        return
-    fi
-
-    if [[ -e "$target_dir" ]]; then
-        echo "Warning: target package path '$target_dir' already exists; skipping directory rename." 1>&2
-        HAD_ERROR=1
-        return
-    fi
-
-    if ! mv "$source_dir" "$target_dir"; then
-        echo "Warning: could not rename '$source_dir' to '$target_dir'; continuing." 1>&2
-        HAD_ERROR=1
-    fi
-}
-
-mark_update_error() {
-    local file=$1
-
-    echo "Warning: could not update '$file'." 1>&2
-    HAD_ERROR=1
-}
-
-cleanup_backup_files() {
-    local file
-
-    while IFS= read -r -d "" file; do
-        if ! rm -f -- "$file"; then
-            echo "Warning: could not remove backup file '$file'." 1>&2
-            HAD_ERROR=1
-        fi
-    done < <(
-        find . \
-            \( \
-                -path "./.git" -o \
-                -path "./.venv" -o \
-                -path "./.mypy_cache" -o \
-                -path "./.pytest_cache" -o \
-                -path "./.ruff_cache" -o \
-                -path "./__pycache__" -o \
-                -path "./build" -o \
-                -path "./dist" -o \
-                -path "./htmlcov" \
-            \) -prune \
-            -o -type f \
-            -name "*.bak" \
-            -print0
-    )
-}
-
-while IFS= read -r -d "" file; do
-    if [[ "$file" == "./rename-template.sh" ]]; then
-        continue
-    fi
-
-    replace_in_file "$file" "$TEMPLATE_PROJECT_NAME" "$PROJECT_NAME" || mark_update_error "$file"
-    replace_in_file "$file" "$TEMPLATE_MODULE_NAME" "$MODULE_NAME" || mark_update_error "$file"
-    replace_in_file "$file" "$TEMPLATE_PLACEHOLDER_NAME" "$MODULE_NAME" || mark_update_error "$file"
-done < <(
-    find . \
-        \( \
-            -path "./.git" -o \
-            -path "./.venv" -o \
-            -path "./.mypy_cache" -o \
-            -path "./.pytest_cache" -o \
-            -path "./.ruff_cache" -o \
-            -path "./__pycache__" -o \
-            -path "./build" -o \
-            -path "./dist" -o \
-            -path "./htmlcov" \
-        \) -prune \
-        -o -type f \
-        -not -name "*.pyc" \
-        -not -name "*.pyo" \
-        -print0
-)
-
-rename_package_dir
-cleanup_backup_files
+done
 
 echo "Renamed project to '$PROJECT_NAME' with Python module '$MODULE_NAME'."
 
