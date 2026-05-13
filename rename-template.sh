@@ -2,7 +2,6 @@
 
 TEMPLATE_PROJECT_NAME="uv-python-project-template"
 TEMPLATE_MODULE_NAME="uv_python_project_template"
-HAD_ERROR=0
 
 if [[ $# -ne 1 || -z "${1:-}" ]]; then
     echo "Usage: $0 <new-project-name>" 1>&2
@@ -40,11 +39,6 @@ sed -i '' -e "s/$TEMPLATE_MODULE_NAME/$MODULE_NAME/g" pyproject.toml
 sed -i '' -e "s/$TEMPLATE_PROJECT_NAME/$PROJECT_NAME/g" pyproject.toml
 sed -i '' -e "s/$TEMPLATE_PROJECT_NAME/$PROJECT_NAME/g" uv.lock
 
+mv "src/$TEMPLATE_MODULE_NAME" "src/$MODULE_NAME"
 
 echo "Renamed project to '$PROJECT_NAME' with Python module '$MODULE_NAME'."
-
-if [[ "$HAD_ERROR" -eq 0 ]]; then
-    rm -- "$0" || echo "Warning: project was renamed, but '$0' could not be removed." 1>&2
-else
-    echo "Warning: rename completed with warnings; keeping '$0' for manual cleanup." 1>&2
-fi
