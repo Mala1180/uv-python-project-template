@@ -1,3 +1,11 @@
+## [1.0.6](https://github.com/Mala1180/uv-python-project-template/compare/1.0.5...1.0.6) (2026-05-13)
+
+### Bug Fixes
+
+* fix rename script ([a583aa8](https://github.com/Mala1180/uv-python-project-template/commit/a583aa89bc03b0967148b218d0f9d93caf0592e2))
+* fix rename script ([810b0bb](https://github.com/Mala1180/uv-python-project-template/commit/810b0bb7f539152fed805bef4eff986f7c03b788))
+* rename test directory, fixing rename script ([cfd46b7](https://github.com/Mala1180/uv-python-project-template/commit/cfd46b7d3fce8b4f69469b1c51f51cbf4c55501b))
+
 ## [1.0.5](https://github.com/Mala1180/uv-python-project-template/compare/1.0.4...1.0.5) (2026-05-12)
 
 ### Bug Fixes
