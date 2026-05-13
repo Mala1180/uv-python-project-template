@@ -73,13 +73,13 @@ jobs:
           python -m pip install --upgrade pip
           python -m pip install uv
 
+      - name: Checkout Code
+        uses: actions/checkout@v6
+        
       - name: Setup Python with uv
         run: |
           uv python install ${{ matrix.python-version }}
           uv python pin ${{ matrix.python-version }}
-
-      - name: Checkout Code
-        uses: actions/checkout@v6
 
       - name: Restore Development Environment
         run: uv sync
