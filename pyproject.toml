@@ -12,7 +12,7 @@ dependencies = [
 ]
 
 [project.scripts]
-my_project = "my_project:main"
+uv_python_project_template = "uv_python_project_template:main"
 
 [build-system]
 requires = ["uv_build>=0.11.7,<0.12.0"]
@@ -35,8 +35,8 @@ ruff-check = "ruff check"
 ruff-fix = "ruff check --fix"
 format = "ruff format"
 format-check = "ruff format --check"
-mypy = "mypy src tests"
-compile = "python -m compileall src tests"
+mypy = "mypy src test"
+compile = "python -m compileall src test"
 static-checks = [
     "ruff-check",
     "mypy",

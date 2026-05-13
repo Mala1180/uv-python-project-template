@@ -2,7 +2,6 @@
 
 TEMPLATE_PROJECT_NAME="uv-python-project-template"
 TEMPLATE_MODULE_NAME="uv_python_project_template"
-TEMPLATE_PLACEHOLDER_NAME="my_project"
 HAD_ERROR=0
 
 if [[ $# -ne 1 || -z "${1:-}" ]]; then
@@ -21,8 +20,8 @@ MODULE_NAME=$(printf "%s" "$PROJECT_NAME" \
     | sed -E "s/[-.]+/_/g; s/[^a-z0-9_]/_/g; s/_+/_/g; s/^_+//; s/_+$//")
 
 if [[ -z "$MODULE_NAME" ]]; then
-    echo "Warning: could not derive a Python module name from '$PROJECT_NAME'; using '$TEMPLATE_PLACEHOLDER_NAME'." 1>&2
-    MODULE_NAME=$TEMPLATE_PLACEHOLDER_NAME
+    echo "Warning: could not derive a Python module name from '$PROJECT_NAME'; using '$TEMPLATE_MODULE_NAME'." 1>&2
+    MODULE_NAME=$TEMPLATE_MODULE_NAME
 fi
 
 if [[ "$MODULE_NAME" =~ ^[0-9] ]]; then
@@ -33,11 +32,14 @@ if [[ ! "$MODULE_NAME" =~ ^[a-z_][a-z0-9_]*$ ]]; then
     echo "Warning: derived Python module name '$MODULE_NAME' is unusual; continuing." 1>&2
 fi
 
-for FILE in `find . -type f  -not -iname '*.pyc' -not -path '*.git*'`; do 
-    sed -i -e "s/$TEMPLATE_MODULE_NAME/$MODULE_NAME/g" $FILE
-    sed -i -e "s/$TEMPLATE_PROJECT_NAME/$PROJECT_NAME/g" $FILE
-
+for FILE in `find src test -type f  -not -iname '*.pyc' -not -path '*.git*'`; do 
+    sed -i '' -e "s/$TEMPLATE_MODULE_NAME/$MODULE_NAME/g" $FILE
 done
+
+sed -i '' -e "s/$TEMPLATE_MODULE_NAME/$MODULE_NAME/g" pyproject.toml
+sed -i '' -e "s/$TEMPLATE_PROJECT_NAME/$PROJECT_NAME/g" pyproject.toml
+sed -i '' -e "s/$TEMPLATE_PROJECT_NAME/$PROJECT_NAME/g" uv.lock
+
 
 echo "Renamed project to '$PROJECT_NAME' with Python module '$MODULE_NAME'."
 

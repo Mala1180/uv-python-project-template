@@ -20,7 +20,7 @@ The template starts with a minimal package named `uv_python_project_template`, w
 │   └── uv_python_project_template/   # main package (renamed into your project name)
 │       ├── __init__.py
 │       └── main.py                   # application entry point
-├── tests/                            # test package
+├── test/                            # test package
 │   └── test_my_class.py              # pytest example
 ├── .github/                          # configuration of GitHub Actions
 │   └── workflows/
@@ -80,7 +80,7 @@ uv python list
     ```
 
 5. Start building your project in `src/uv_python_project_template/` and add tests under
-   `tests/`.
+   `test/`.
 
 ## Main Commands
 
@@ -115,8 +115,8 @@ can be run through uv.
 | `uv run poe ruff-fix` | Run Ruff and apply automatic fixes. |
 | `uv run poe format` | Format code with Ruff. |
 | `uv run poe format-check` | Check formatting without changing files. |
-| `uv run poe mypy` | Type-check `src/` and `tests/` with Mypy. |
-| `uv run poe compile` | Compile `src/` and `tests/` to catch syntax errors. |
+| `uv run poe mypy` | Type-check `src/` and `test/` with Mypy. |
+| `uv run poe compile` | Compile `src/` and `test/` to catch syntax errors. |
 | `uv run poe static-checks` | Run the configured static checks, currently Ruff and Mypy. |
 
 
