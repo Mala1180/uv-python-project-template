@@ -30,7 +30,7 @@ jobs:
 
       - name: Reset project version
         run: |
-          sed -i '' -e 's/^version = ".*"/version = "0.1.0"/g' pyproject.toml
+          sed -i -e 's/^version = ".*"/version = "0.1.0"/g' pyproject.toml
           && uv lock
         shell: bash
 
@@ -45,7 +45,7 @@ jobs:
 
       - name: Change default assignee in renovate.json
         run: |
-          sed -i '' -e "s/Mala1180/${{ github.actor }}/g" renovate.json
+          sed -i -e "s/Mala1180/${{ github.actor }}/g" renovate.json
         shell: bash
 
       - name: Add files and commit changes
