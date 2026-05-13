@@ -1,3 +1,9 @@
+## [1.1.4](https://github.com/Mala1180/uv-python-project-template/compare/1.1.3...1.1.4) (2026-05-13)
+
+### Bug Fixes
+
+* **ci:** install uv ([b5da10f](https://github.com/Mala1180/uv-python-project-template/commit/b5da10f5f2b387bfa6f95e66fb184454e262f497))
+
 ## [1.1.3](https://github.com/Mala1180/uv-python-project-template/compare/1.1.2...1.1.3) (2026-05-13)
 
 ### Bug Fixes
