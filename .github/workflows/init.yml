@@ -28,6 +28,16 @@ jobs:
         run: bash rename-template.sh $(basename ${{ github.repository }})
         shell: bash
 
+      - name: Reset project version
+        run: |
+          sed -i '' -e 's/^version = ".*"/version = "0.1.0"/g' pyproject.toml
+          && uv lock
+        shell: bash
+
+      - name: Reset Changelog
+        run: rm CHANGELOG.md
+        shell: bash
+
       - name: Remove template initialization files
         run: |
           rm .github/workflows/init.yml
