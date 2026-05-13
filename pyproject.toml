@@ -12,7 +12,7 @@ dependencies = [
 ]
 
 [project.scripts]
-uv_python_project_template = "uv_python_project_template:main"
+uv_python_project_template = "uv_python_project_template.main:main"
 
 [build-system]
 requires = ["uv_build>=0.11.7,<0.12.0"]

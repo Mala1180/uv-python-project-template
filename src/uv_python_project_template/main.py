@@ -1,3 +1,6 @@
-import uv_python_project_template
+from uv_python_project_template import MyClass
 
-uv_python_project_template.main()
+
+def main():
+    x = MyClass().my_method()
+    print(x)

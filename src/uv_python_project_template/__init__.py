@@ -9,9 +9,4 @@ class MyClass:
         return "Hello World"
 
 
-def main():
-    x = MyClass().my_method()
-    print(x)
-
-
 logger.info("uv_python_project_template loaded")
