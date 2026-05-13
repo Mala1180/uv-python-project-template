@@ -6,7 +6,7 @@ readme = "README.md"
 authors = [
     { name = "Mattia Matteini", email = "matteinimattia@gmail.com" }
 ]
-requires-python = ">=3.10"
+requires-python = ">=3.10" # Update workflows/check.yml if you change this
 dependencies = [
     "poethepoet>=0.45.0",
 ]

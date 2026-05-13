@@ -58,8 +58,7 @@ jobs:
           - ubuntu-latest
           - windows-latest
           - macos-latest
-        python-version:
-          - '3.9'
+        python-version: # modify accordingly to the minimum Python version specified in pyproject.toml
           - '3.10'
           - '3.11'
           - '3.12'
