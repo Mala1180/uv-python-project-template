@@ -1,3 +1,10 @@
+## [1.1.1](https://github.com/Mala1180/uv-python-project-template/compare/1.1.0...1.1.1) (2026-05-13)
+
+### Bug Fixes
+
+* **ci:** update minimum python version on matrix ([6877625](https://github.com/Mala1180/uv-python-project-template/commit/68776252e9deb33873c18d27dd7aff570ec542ec))
+* make checkout before uv sync ([3482685](https://github.com/Mala1180/uv-python-project-template/commit/3482685f6b216bbbda74620389c89539dc5e562a))
+
 ## [1.1.0](https://github.com/Mala1180/uv-python-project-template/compare/1.0.7...1.1.0) (2026-05-13)
 
 ### Features
