@@ -1,3 +1,9 @@
+## [1.1.2](https://github.com/Mala1180/uv-python-project-template/compare/1.1.1...1.1.2) (2026-05-13)
+
+### Bug Fixes
+
+* **ci:** reset project version and changelog in init workflow ([a8b43a3](https://github.com/Mala1180/uv-python-project-template/commit/a8b43a36254e42999247b88171b3a75866348cc1))
+
 ## [1.1.1](https://github.com/Mala1180/uv-python-project-template/compare/1.1.0...1.1.1) (2026-05-13)
 
 ### Bug Fixes
